@@ -23,3 +23,110 @@ bower install backbone
 always need jquery with backbone
 load jquery script, underscore, backbone
 then models.js, views.js, app.js
+
+
+
+
+npm install browserify underscore jquery backbone
+only load one script tag in index
+src = bundles.js
+
+movie.js:
+var Backbone = required('backbone');
+var $ = require ('jquery');
+Backbone.$ = $;
+module.exports = Backbone.Model.extend({
+  urlRoot: 'http://tiy-fee-rest.herokupaa.com/collections/imbb',
+  idAttribute: '_id',
+  initialize: function() {
+
+  }
+});
+
+movieCollection.js:
+var Backbone = required('backbone');
+var $ = require ('jquery');
+Backbone.$ = $;
+var MovieModel = require('./movie');
+
+module.exports = Backbone.Collection.extend({
+  model: MovieModel,
+  url: 'http://tiy-fee-rest.herokupaa.com/collections/imbb',
+  initialize: function() {
+
+  }
+});
+
+movieView.js:
+var Backbone = required('backbone');
+var $ = require ('jquery');
+Backbone.$ = $;
+var _ = require('underscore');
+
+module.exports = Backbone.View.extend({
+  tagName: 'article',
+  className: 'movie',
+  template: _.template($('#movieTmpl').html()),
+  initialize: function() {
+
+  },
+  render: function() {
+    var markup = this.template(this.model.toJSON());
+    this.$el.html(markup);
+    return this;
+  }
+});
+
+movieCollectionView.js:
+var Backbone = required('backbone');
+var $ = require ('jquery');
+Backbone.$ = $;
+var _ = require('underscore');
+var MovieView = require('./movieView');
+
+module.exports = Backbone.View.extend({
+  el: '$movies',
+  initialize: function() {
+    this.addAll();
+  },
+  addAll: function() {
+    _.each(this.collection.models, this.addOne, this);
+  },
+  addOne: function(movie) {
+    var movieView = new MovieView({model: movie});
+    this.$el.append(movieView.render().el)
+  }
+
+});
+
+
+data.js:
+module.exports = [array of data]
+
+app.js:
+var mockData = require ('./data')
+var MovieCollection = require ('./movieCollection');
+var MovieCollectionView = require('./movieColView');
+var $ = require('jquery');
+
+module.exports = $(function () {
+  var collection = new MovieCollection(mockData);
+  new MovieCollectionView({collection: collection});
+});
+
+in terminal:
+node_modules/.bin/browserify js/app.js -o bundled.js -d
+
+npm init, enter through
+open package.json
+in scripts:
+add "bundle": "node_modules/.bin/browserify js/app.js -o bundled.js -d",
+
+
+go back to terminal
+npm run bundle
+
+npm install serve --save-dev
+makes serve a dev dependency
+add another task to script:
+"start": "npm run bundle && node_modules/.bin/serve",

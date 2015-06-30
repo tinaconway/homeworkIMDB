@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>IMDB</title>
+  <title>IMDBB</title>
   <link rel="stylesheet" href="main.css">
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
   <script type="text/template" id="postTmpl">
@@ -13,22 +13,21 @@
       <input type= "text" class="inputEdit" id = "<%= _id %>" value = "<%= title %>" /><br>
       <p class="released"><%= released %></p><div class="editButton" id = "<%= _id %>" ></div>
       <input type="text" class="inputEdit" id = "<%= _id %>" value = "<%= released %>" /><br>
-      <p class= "rating">Rating: <%= rating %> </p><div class="editButton" id = "<%= _id %>" ></div>
+      <p class= "rating"><%= rating %> </p><div class="editButton" id = "<%= _id %>" ></div>
       <input type="text" class="inputEdit" id = "<%= _id %>" value = "<%= rating %>">
       <p class="plot"><%= plot %></p><div class="editButton" id = "<%= _id %>" ></div>
       <textarea type="text" class="inputEdit" id = "<%= _id %>" value="<%= plot %>" cols="25"
          rows="3"><%= plot %></textarea>
       <button class="delete" id ="<%= _id %>">Delete</button>
-
-    </div>
+      </div>
     </div>
   </script>
 </head>
 <body>
-  <h1>Movies</h1>
+  <h1 class="header">IMDBB</h1>
+  <P class="centerTitle">(Internet Movie Database BackBone)</P>
   <div id="container">
   </div>
-
 
 <div class = "addMovies visibility">
   <h2>Add a Movie!</h2>
@@ -39,18 +38,11 @@
     Plot:<br> <textarea required  id="plotInput" type="text" name = "plot" cols="59"
        rows="3" ></textarea><br>
     Cover Image URL:<br> <input id="coverInput" type="text" name = "cover" size= 40 /><br>
-    <input id="userSubmit" type="button" id="submitButton" value="Submit" />
+    <input id="userSubmit" type="button" value="Submit" />
   </form>
 </div>
 
+  <script src="bundled.js"></script>
 
-
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/underscore/underscore.js"></script>
-  <script src="bower_components/backbone/backbone.js"></script>
-
-  <script src="model.js"></script>
-  <script src="view.js"></script>
-  <script src="main.js"></script>
 </body>
 </html>

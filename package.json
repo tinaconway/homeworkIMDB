@@ -1,0 +1,30 @@
+{
+  "name": "homeworkimdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "backbone": "^1.2.1",
+    "browserify": "^10.2.4",
+    "underscore": "^1.8.3",
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {
+    "serve": "^1.4.0"
+  },
+  "scripts": {
+    "bundle": "node_modules/.bin/browserify js/main.js -o bundled.js -d",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run bundle && node_modules/.bin/serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinaconway/homeworkIMDB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tinaconway/homeworkIMDB/issues"
+  },
+  "homepage": "https://github.com/tinaconway/homeworkIMDB#readme"
+}
