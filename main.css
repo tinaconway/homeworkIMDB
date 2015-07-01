@@ -12,16 +12,13 @@ h1 {
   font-size: 3.5em;
   text-align: center;
 }
-.header {
-  margin-bottom: 0;
-}
+
 .centerTitle {
   text-align: center;
   font-weight: 300;
   font-size: 2em;
-  margin-top: 0;
-
 }
+
 .visibility {
     margin-left: auto;
     margin-right: auto;
@@ -53,7 +50,6 @@ h1 {
   display: block;
   margin-top: 15px;
 }
-
 
 .editButton {
   background: url('http://png-5.findicons.com/files/icons/2482/icons8_ever_growing_set_of_windows_8_metro_style_icons/26/edit.png') no-repeat;
