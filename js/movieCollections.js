@@ -10,9 +10,3 @@ module.exports = Backbone.Collection.extend({
 
   }
 });
-
-
-// var PostCollection = Backbone.Collection.extend({
-//   model: PostModel,
-//   url: 'http://tiy-fee-rest.herokuapp.com/collections/tinasimdb2'
-// });
