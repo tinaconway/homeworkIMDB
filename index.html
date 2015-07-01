@@ -9,38 +9,90 @@
     <div class= 'containPost visibility'>
       <img src="<%= cover %>">
       <div class = "rightSide">
-      <h2 class="title"><%= title %></h2><div class="editButton" id = "<%= _id %>" ></div>
-      <input type= "text" class="inputEdit" id = "<%= _id %>" value = "<%= title %>" /><br>
-      <p class="released"><%= released %></p><div class="editButton" id = "<%= _id %>" ></div>
-      <input type="text" class="inputEdit" id = "<%= _id %>" value = "<%= released %>" /><br>
-      <p class= "rating"><%= rating %> </p><div class="editButton" id = "<%= _id %>" ></div>
-      <input type="text" class="inputEdit" id = "<%= _id %>" value = "<%= rating %>">
-      <p class="plot"><%= plot %></p><div class="editButton" id = "<%= _id %>" ></div>
-      <textarea type="text" class="inputEdit" id = "<%= _id %>" value="<%= plot %>" cols="25"
-         rows="3"><%= plot %></textarea>
-      <button class="delete" id ="<%= _id %>">Delete</button>
+      <h2 class="title"><%= title %></h2><div class="editButton"></div>
+      <input type= "text" class="inputEdit"value = "<%= title %>" /><br>
+      <p class="released"><%= released %></p><div class="editButton" ></div>
+      <input type="text" class="inputEdit"value = "<%= released %>" /><br>
+      <p class= "rating"><%= rating %> </p><div class="editButton" ></div>
+      <input type="text" class="inputEdit"value = "<%= rating %>">
+      <p class="plot"><%= plot %></p><div class="editButton" ></div>
+      <textarea type="text" class="inputEdit"value="<%= plot %>" cols="25"
+         rows="3"><%= plot %></textarea><br>
+      <button class="delete">Delete</button>
+
       </div>
     </div>
   </script>
+  <script type= "text/template" id= "formTmpl">
+  <div class = "addMovies visibility">
+    <h2>Add a Movie!</h2>
+    <form class="add">
+      Title:<br> <input required id="titleInput" type="text" name = "title" size = 40 /><br>
+      Year released:<br> <input required id="releasedInput" type="text" name = "released" size= 15 /><br>
+      Rating:<br> <input required id="ratingInput" type="text" name = "rating" size = 15 /><br>
+      Plot:<br> <textarea required  id="plotInput" type="text" name = "plot" cols="59"
+         rows="3" ></textarea><br>
+      Cover Image URL:<br> <input id="coverInput" type="text" name = "cover" size= 40 /><br>
+      <button id="userSubmit" type="submit">Add Movie</button>
+
+    </form>
+  </div>
+  </script>
+  <script type="text/template" id="contactTmpl">
+    <div class = "contactForm visibility">
+      <h2>Contact Us</h2>
+      <form class="contactUs">
+        Name:<br> <input required id="titleInput" type="text" name = "title" size = 40 /><br>
+        Email:<br> <input required id="releasedInput" type="text" name = "released" size= 40 /><br>
+        Comment:<br> <textarea required  id="plotInput" type="text" name = "plot" cols="59"
+           rows="3" ></textarea><br>
+
+        <button id="contactSubmit" type="submit">Submit</button>
+
+      </form>
+    </div>
+
+
+  </script>
+  <script type="text/template" id="aboutTmpl">
+    <div class = "aboutForm visibility">
+      <h2>About Us</h2>
+      <form class="contactUs">
+        We are an Internet Movie Database created by you!<br><br>
+        Manage all your favorite movies in one place! To add a movie, simply click the "Add Movies" button <br>
+        at the top of the page. To see all of your movies, just click the "Home" button! You can even edit<br>
+        your movie database! All you have to do is click the edit icon next to the data you would like to edit. <br>
+      <br>Enjoy!
+
+      </form>
+    </div>
+
+
+  </script>
 </head>
 <body>
-  <h1 class="header">Movies</h1>
+  <div class='nav'>
+    <ul class="nav-bar">
+      <li><a href="#home" id="home">Home</a></li>
+      <li><a href="#about" id="about">About</a></li>
+      <li><a href="#addmovie" id="movie">Add Movies</a></li>
+      <li><a href="#contact" id="contact">Contact</a></li>
 
+    </ul>
+
+
+
+  </div>
+  <h1 class="header">Movies</h1>
   <div id="container">
   </div>
+  <div class= "centerForm"><div id="addMovieForm">
+  </div></div>
+  <div class= "centerForm"><div class="contact">  <h1 class="header">Contact</h1></div></div>
+  <div class= "centerForm"><div class="about">  <h1 class="header">About</h1></div></div>
 
-<div class = "addMovies visibility">
-  <h2>Add a Movie!</h2>
-  <form class="add">
-    Title:<br> <input required id="titleInput" type="text" name = "title" size = 40 /><br>
-    Year released:<br> <input required id="releasedInput" type="text" name = "released" size= 15 /><br>
-    Rating:<br> <input required id="ratingInput" type="text" name = "rating" size = 15 /><br>
-    Plot:<br> <textarea required  id="plotInput" type="text" name = "plot" cols="59"
-       rows="3" ></textarea><br>
-    Cover Image URL:<br> <input id="coverInput" type="text" name = "cover" size= 40 /><br>
-    <input id="userSubmit" type="button" value="Submit" />
-  </form>
-</div>
+
+
 
   <script src="bundled.js"></script>
 

@@ -16,18 +16,6 @@ module.exports = Backbone.Model.extend({
 });
 
 
-// var PostModel =  Backbone.Model.extend({
-//   urlRoot: 'http://tiy-fee-rest.herokuapp.com/collections/tinasimdb2',
-//   idAttribute: '_id',
-//   defaults: function () {
-//    return {
-//      cover: 'http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg'
-//    };
-//  },
-//   initialize: function (options) {
-//
-//   }
-// });
 
 
 
